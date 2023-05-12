@@ -1,0 +1,175 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Offwhite: hsl(0, 0%, 94%);
+    --Lightgrey: hsl(0, 0%, 86%);
+    --Smokeygrey: hsl(0, 1%, 44%);
+    --Offblack: hsl(0, 0%, 8%);
+    --Purple: hsl(259, 100%, 65%);
+    --Lightred: hsl(0, 100%, 67%);
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: var(--Lightgrey);
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    align-items: center;
+}
+
+.calculator {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    border-radius: 10px 10px 30% 10px;
+
+}
+
+
+.inputfield {
+    display: flex;
+    flex-direction: row;
+}
+
+.inputfield>div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: var(--Smokeygrey);
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+input {
+    border-radius: 8px;
+    border: var(--Lightgrey) solid 1px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--Lightgrey);
+}
+
+.mainline {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.button {
+    position: absolute;
+    background-color: var(--Purple);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.button:hover {
+    background-color: var(--Offblack);
+    cursor: pointer;
+}
+
+.output>div {
+    display: flex;
+    flex-direction: row;
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+.output h1 {
+    margin: 0;
+    font-size: 64px;
+}
+
+.yearOutput,
+.monthOutput,
+.dayOutput {
+    color: var(--Purple);
+    padding-right: 4px;
+    font-size: 64px;
+}
+
+small {
+    color: var(--Lightred);
+    font-style: italic;
+    margin-top: 8px;
+}
+
+@media (max-width: 767px) {
+    .mainline {
+        justify-content: center;
+    }
+
+    .output h1 {
+        font-size: 48px;
+    }
+
+    .yearOutput,
+    .monthOutput,
+    .dayOutput {
+        font-size: 48px;
+    }
+
+    .inputfield {
+        margin-right: 0;
+        gap: 8px;
+    }
+
+    .inputfield>div {
+        width: calc(100%/3);
+    }
+
+    .calculator {
+        padding: 40px 28px;
+    }
+
+
+}
+
+@media only screen and (min-width: 768px) {
+    .calculator {
+        padding: 40px;
+    }
+
+    .mainline {
+        justify-content: end;
+    }
+
+    .inputfield {
+        margin-right: 60px;
+        gap: 20px;
+    }
+
+    .calculator {
+        width: 700px;
+    }
+
+    .output h1 {
+        font-size: 64px;
+    }
+
+    .yearOutput,
+    .monthOutput,
+    .dayOutput {
+        font-size: 64px;
+    }
+
+    .inputfield>div {
+        width: 120px;
+    }
+}
